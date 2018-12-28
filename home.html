@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<!-- 在angular中使用路由 -->
+	<script src="https://cdn.bootcss.com/angular.js/1.7.0/angular.min.js"></script>
+	<!-- 导入angular-routejs,angular本身不支持路由，需要依赖路由模块 -->
+	<script src="https://cdn.bootcss.com/angular.js/1.7.0/angular-route.min.js"></script>
+</head>
+<body>
+	<div ng-app="app" ng-controller="myCtrl">
+		<!-- 路由导航 -->
+		<ul>
+			<li ng-repeat="x in data">
+				<a href="x.path">{{x.title}}</a>
+			</li>
+		</ul>
+	</div>
+</body>
+<script>
+	let app=angular.module('app',[]).controller('myCtrl',function($scope){
+		$scope.data=[
+			{
+				path:"#!/",
+				title:"首页"
+			},
+			{
+				path:"#!/active",
+				title:"活动"
+			},
+			{
+				path:"#!about",
+				title:"关于"
+			}
+		]
+	})
+</script>
+</html>
